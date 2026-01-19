@@ -23,8 +23,30 @@ document.addEventListener('DOMContentLoaded', async () => {
         saveCurrent: document.getElementById('save-current-video')
     };
     const inputs = {
-        folderName: document.getElementById('folder-name-input')
+        folderName: document.getElementById('folder-name-input'),
+        search: document.getElementById('search-input')
     };
+
+    // --- Search Logic ---
+    inputs.search.addEventListener('input', (e) => {
+        const query = e.target.value.toLowerCase();
+
+        // Filter elements based on active view
+        const isFoldersView = views.folders.classList.contains('active');
+        const container = isFoldersView ? containers.folders : containers.clips;
+        const selector = isFoldersView ? '.folder-card:not(.add-folder-card)' : '.clip-card';
+        const textSelector = isFoldersView ? '.folder-name' : '.clip-title';
+
+        const items = container.querySelectorAll(selector);
+        items.forEach(item => {
+            const text = item.querySelector(textSelector).textContent.toLowerCase();
+            if (text.includes(query)) {
+                item.style.display = '';
+            } else {
+                item.style.display = 'none';
+            }
+        });
+    });
     const modals = {
         folder: document.getElementById('modal-folder'),
         select: document.getElementById('modal-select-folder')

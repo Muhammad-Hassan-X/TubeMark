@@ -297,4 +297,64 @@ main {
 
 .btn-primary:hover {
     background: var(--primary-hover);
+}/* Search Bar */
+.search-container {
+    margin-bottom: 16px;
+    position: relative;
+}
+
+#search-input {
+    width: 100%;
+    padding: 10px 12px;
+    /* Left padding space for potential text */
+    padding-right: 36px;
+    /* Space for icon */
+    background: rgba(255, 255, 255, 0.08);
+    /* Lighter than card */
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    /* Smooth rounded */
+    color: white;
+    font-family: inherit;
+    font-size: 14px;
+    transition: all 0.2s ease;
+}
+
+#search-input:focus {
+    outline: none;
+    background: rgba(255, 255, 255, 0.12);
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 2px rgba(255, 0, 0, 0.2);
+}
+
+.search-icon {
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--text-secondary);
+    pointer-events: none;
+}
+
+/* Green Save Button */
+#save-current-video {
+    background: linear-gradient(135deg, #2ba640 0%, #1e7e30 100%);
+    color: white;
+    border: none;
+    font-weight: 600;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    transition: transform 0.1s, box-shadow 0.2s;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+#save-current-video:hover {
+    background: linear-gradient(135deg, #32c24a 0%, #229138 100%);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    transform: translateY(-1px);
+}
+
+#save-current-video:active {
+    transform: translateY(0);
 }
