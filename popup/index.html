@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TubeMark</title>
+  <link rel="stylesheet" href="../styles/main.css">
+  <link rel="stylesheet" href="popup.css">
+  <link rel="stylesheet" href="selection.css">
+</head>
+
+<body>
+  <div class="app-container">
+    <header>
+      <div class="logo">
+        <img src="../icons/icon48.png" alt="TubeMark">
+        <span>TubeMark</span>
+      </div>
+      <div class="header-actions">
+        <button id="save-current-video" class="btn-primary" title="Save Current Video"
+          style="border-radius: 4px; padding: 4px 12px; font-size: 12px;">
+          Save
+        </button>
+      </div>
+    </header>
+
+    <main>
+      <!-- Folders View -->
+      <div id="view-folders" class="view active">
+        <div class="folder-list" id="folder-list">
+          <!-- Folders injected here -->
+        </div>
+      </div>
+
+      <!-- Clips View -->
+      <div id="view-clips" class="view">
+        <div class="back-btn-row" id="back-to-folders">
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z" />
+          </svg>
+          <span id="current-folder-name">Folder Name</span>
+        </div>
+        <div class="clip-list" id="clip-list">
+          <!-- Clips injected here -->
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <!-- Create Folder Modal -->
+  <div class="modal-overlay" id="modal-folder">
+    <div class="modal">
+      <h3 class="modal-title">New Folder</h3>
+      <input type="text" id="folder-name-input" class="modal-input" placeholder="Folder Name">
+      <div class="modal-actions">
+        <button class="btn btn-secondary" id="cancel-folder">Cancel</button>
+        <button class="btn btn-primary" id="save-folder">Create</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Select Folder Modal -->
+  <div class="modal-overlay" id="modal-select-folder">
+    <div class="modal">
+      <h3 class="modal-title">Select Folder</h3>
+      <div id="folder-selection-list" class="folder-selection-list">
+        <!-- Radio buttons injected here -->
+      </div>
+      <div class="modal-actions">
+        <button class="btn btn-secondary" id="cancel-select">Cancel</button>
+        <button class="btn btn-primary" id="confirm-save">Save</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="../utils/storage.js"></script>
+  <script src="popup.js"></script>
+</body>
+
+</html>

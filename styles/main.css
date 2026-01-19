@@ -1,0 +1,60 @@
+:root {
+  --primary-color: #ff0000;
+  --primary-hover: #cc0000;
+  --bg-dark: #0f0f0f;
+  --bg-card: #1e1e1e;
+  --text-main: #ffffff;
+  --text-secondary: #aaaaaa;
+  --border-color: #333333;
+  --glass-bg: rgba(30, 30, 30, 0.8);
+  --glass-border: rgba(255, 255, 255, 0.1);
+  --shadow-lg: 0 4px 15px rgba(0, 0, 0, 0.5);
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --font-family: 'Roboto', 'Arial', sans-serif;
+  --transition-speed: 0.2s;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-family);
+  background-color: var(--bg-dark);
+  color: var(--text-main);
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(5px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.fade-in {
+  animation: fadeIn var(--transition-speed) ease-out forwards;
+}
+
+/* Glassmorphism Utility */
+.glass {
+  background: var(--glass-bg);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid var(--glass-border);
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-dark);
+}
+::-webkit-scrollbar-thumb {
+  background: #444;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #666;
+}

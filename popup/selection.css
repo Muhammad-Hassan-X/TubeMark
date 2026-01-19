@@ -1,0 +1,40 @@
+/* Folder Selection List in Modal */
+.folder-selection-list {
+    max-height: 200px;
+    overflow-y: auto;
+    margin-bottom: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.folder-option {
+    display: flex;
+    align-items: center;
+    padding: 8px;
+    background: var(--bg-dark);
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.folder-option:hover {
+    border-color: var(--primary-color);
+}
+
+.folder-option.selected {
+    background: rgba(255, 0, 0, 0.1);
+    border-color: var(--primary-color);
+}
+
+.folder-option input {
+    margin-right: 10px;
+    accent-color: var(--primary-color);
+}
+
+.folder-option label {
+    cursor: pointer;
+    flex: 1;
+    font-size: 14px;
+}

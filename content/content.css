@@ -1,0 +1,60 @@
+/* TubeMark Content Styles */
+
+.tm-save-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--yt-spec-badge-chip-background, rgba(255, 255, 255, 0.1));
+    color: var(--yt-spec-text-primary, #fff);
+    border: none;
+    border-radius: 18px;
+    padding: 0 16px;
+    margin-left: 8px;
+    height: 36px;
+    font-size: 14px;
+    font-weight: 500;
+    font-family: "Roboto", "Arial", sans-serif;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    text-decoration: none;
+}
+
+.tm-save-btn:hover {
+    background-color: var(--yt-spec-badge-chip-background-hover, rgba(255, 255, 255, 0.2));
+}
+
+.tm-save-btn svg {
+    width: 20px;
+    height: 20px;
+    margin-right: 6px;
+    fill: currentColor;
+}
+
+/* Toast Notification */
+.tm-toast {
+    position: fixed;
+    bottom: 24px;
+    left: 24px;
+    background: #1e1e1e;
+    color: white;
+    padding: 12px 24px;
+    border-radius: 8px;
+    border: 1px solid #333;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    font-family: Roboto, Arial, sans-serif;
+    transform: translateY(100px);
+    opacity: 0;
+    transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.tm-toast.show {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.tm-toast.success .tm-toast-icon {
+    color: #2ba640;
+}
